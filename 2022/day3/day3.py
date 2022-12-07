@@ -1,5 +1,5 @@
 def main():
-    get_input()
+    compare(get_input())
 
 
 prio = {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5, 'f': 6, 'g': 7,
@@ -9,8 +9,17 @@ prio = {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5, 'f': 6, 'g': 7,
         'A': 27, 'B': 28, 'C': 29, 'D': 30, 'E': 31, 'F': 32, 'G': 33,
         'H': 34, 'I': 35, 'J': 36, 'K': 37, 'L': 38, 'M': 39, 'N': 40,
         'O': 41, 'P': 42, 'Q': 43, 'R': 44, 'S': 45, 'T': 46, 'U': 47,
-        'V': 48, 'W': 49, 'X': 50, 'Y': 51, 'Z': 52
-        }
+        'V': 48, 'W': 49, 'X': 50, 'Y': 51, 'Z': 52}
+
+
+def compare(items):
+    total = []
+    for x in items:
+        comp1, comp2 = x[:len(x)//2], x[len(x)//2:]
+        chars = list(set(comp1) & set(comp2))
+        for i in chars:
+            total.append(prio[i])
+    print(sum(total))
 
 
 def get_input():
