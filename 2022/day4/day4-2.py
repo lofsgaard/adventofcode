@@ -12,13 +12,13 @@ def compare(items):
         int2 = int(line[0].split('-')[1])
         int3 = int(line[1].split('-')[0])
         int4 = int(line[1].split('-')[1])
-        
-        start1 = range(int1, int2).start in range(int3, int4+1)
-        stop1 = range(int1, int2).stop in range(int3, int4+1)
-        start2 = range(int3, int4).start in range(int1, int2+1)
-        stop2 = range(int3, int4).stop in range(int1, int2+1)
 
-        if start1 and stop1 or start2 and stop2:
+        start1 = range(int1, int2).start in range(int3, int4 + 1)
+        stop1 = range(int1, int2).stop in range(int3, int4 + 1)
+        start2 = range(int3, int4).start in range(int1, int2 + 1)
+        stop2 = range(int3, int4).stop in range(int1, int2 + 1)
+
+        if start1 or stop1 or start2 or stop2:
             counter = counter + 1
     print(counter)
 
