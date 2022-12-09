@@ -9,22 +9,23 @@ def compare(items):
     for x in items:
         sections.append(x.split(','))
     for line in sections:
-        start = range(int(line[0].split('-')[0]), int(line[0].split('-')[1])).start in \
-                range(int(line[1].split('-')[0]), int(line[1].split('-')[1]))
+        int1 = int(line[0].split('-')[0])
+        int2 = int(line[0].split('-')[1])
+        int3 = int(line[1].split('-')[0])
+        int4 = int(line[1].split('-')[1])
+        #print(int1, int2)
+        #print(int3, int4)
 
-        stop = range(int(line[0].split('-')[0]), int(line[0].split('-')[1])).stop in \
-               range(int(line[1].split('-')[0]), int(line[1].split('-')[1]))
-        print(start, stop)
-        if stop or start:
-            counter = counter + 1
+        start = range(int1, int2).start in range(int3, int4)
+        stop = range(int1, int2).stop in range(int3, int4)
+        #print(start, stop)
+        if fullrange1 or fullrange2:
+            counter = counter +1
     print(counter)
 
 
-
-
-
 def get_input():
-    with open('inputday4test.txt') as f:
+    with open('inputday4.txt') as f:
         lines = f.readlines()
         list_lines = []
         for line in lines:
